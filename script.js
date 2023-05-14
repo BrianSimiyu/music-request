@@ -58,6 +58,31 @@ database
     <p class="song-title" >${request.songTitle}</p>
     <p class="artist-name">${request.artistName}</p>
     <p class="timestamp">${timestamp}</p>
+    <button class="copy-button">Copy</button>
   `;
     requestList.appendChild(requestItem);
+
+    var copyButton = requestItem.querySelector(".copy-button");
+    var songTitle = request.songTitle;
+    var artistName = request.artistName;
+    copyButton.addEventListener("click", function () {
+      var textToCopy = songTitle + " " + artistName;
+      navigator.clipboard.writeText(textToCopy).then(
+        function () {
+          var copiedMessage = document.createElement("span");
+          copiedMessage.innerText = "Copied!";
+          copiedMessage.classList.add("copied-message");
+          copyButton.parentNode.insertBefore(
+            copiedMessage,
+            copyButton.nextSibling
+          );
+          setTimeout(function () {
+            copiedMessage.remove();
+          }, 200);
+        },
+        function () {
+          console.error("Failed to copy to clipboard.");
+        }
+      );
+    });
   });
