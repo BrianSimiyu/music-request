@@ -70,7 +70,7 @@ button[type="submit"]:hover {
 .note {
   font-weight: normal;
   font-size: 14px;
-
+  font-style: italic;
   margin-bottom: 20px;
 }
 
