@@ -67,6 +67,13 @@ button[type="submit"]:hover {
   margin-bottom: 10px;
 }
 
+.note {
+  font-weight: normal;
+  font-size: 12px;
+
+  margin-bottom: 20px;
+}
+
 .request-item h2 {
   margin: 0 0 5px;
 }
