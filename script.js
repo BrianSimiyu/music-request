@@ -58,7 +58,8 @@ database
     <p class="song-title" >${request.songTitle}</p>
     <p class="artist-name">${request.artistName}</p>
     <p class="timestamp">${timestamp}</p>
-    <button class="copy-button">Copy</button>
+    
+    <i class="fa fa-copy copy-button"></i>
   `;
     requestList.appendChild(requestItem);
 
