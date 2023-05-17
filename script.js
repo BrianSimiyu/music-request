@@ -17,6 +17,9 @@ var database = firebase.database();
 // Get a reference to the request form
 var requestForm = document.getElementById("request-form");
 
+// Get a reference to the confirmation message element
+var confirmationMessage = document.getElementById("confirmation-message");
+
 // Get a reference to the request list
 var requestList = document.getElementById("request-list");
 
@@ -40,6 +43,15 @@ requestForm.addEventListener("submit", function (event) {
 
   // Clear the form inputs
   requestForm.reset();
+
+  // Display the confirmation message
+  confirmationMessage.textContent = "Your song request has been submitted!";
+  confirmationMessage.style.display = "block";
+
+  // Hide the confirmation message after 3 seconds
+  setTimeout(function () {
+    confirmationMessage.style.display = "none";
+  }, 2000);
 });
 
 // Listen for new requests and display them on the page
